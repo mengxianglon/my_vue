@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src="../js/vue.js"></script>
+	<link rel="stylesheet" href="../css/bootstrap.css">
+	<title>Vue</title>
+	<style>
+	
+	</style>
+</head>
+<body>
+	<div id="app">
+		<p>{{msg | change('度')}}</p>
+	</div>
+</body>
+<script>
+		Vue.filter('change',function(msg,str){
+		return msg.replace(/自/g,str)
+	})
+	var vm = new Vue({
+		el: '#app',
+		data: {
+			msg:'早成者未必有成，晚达者未必不达。不可以年少而自恃，不可以年老而自弃。'
+		},
+		methods:{
+		
+		}	
+	})
+
+</script>
+
+</html>

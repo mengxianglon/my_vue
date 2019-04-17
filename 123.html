@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src="../js/vue.js"></script>
+	<title>Vue</title>
+	<style lang="less" scoped>
+		.red {
+			color: red;
+			font-size: 14px;
+		}
+
+		.blue {
+			color: blue;
+			font-size: 20px;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="app">
+		<p :class="{red: !isshow,blue: isshow}" @click="isshow=!isshow">我爱云虹</p>
+	</div>
+</body>
+<script>
+	var vm = new Vue({
+		el: '#app',
+
+		data: {
+			str: 'centos真的要下功夫才能学好呢',
+			isshow: true
+		},
+
+	})
+</script>
+
+</html>
