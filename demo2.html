@@ -4,8 +4,8 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<script src="../js/vue.js"></script>
-	<link rel="stylesheet" href="../css/bootstrap.css">
+	<script src="vue.js"></script>
+	<link rel="stylesheet" href="bootstrap.css">
 	<title>Vue</title>
 	<style>
 
@@ -32,8 +32,7 @@
 				</label>
 				<label>
 					search:
-					<input type="text" class="form-control" v-model="search" placeholder="search">
-					<input type="button" value="搜索" class="btn btn-primary" @click="searchs()">
+					<input type="text" class="form-control" v-model="keywords" placeholder="search">
 				</label>
 			</div>
 		</div>
@@ -49,7 +48,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr class="text-center" v-for="search() in list" :key="item.id">
+				<tr class="text-center" v-for="item in searchs(keywords)" :key="item.id">
 					<td>{{item.id}}</td>
 					<td>{{item.name}}</td>
 					<td>{{item.ctime |timeformat}}</td>
@@ -75,11 +74,12 @@
 		data: {
 			id: '',
 			name: '',
-			search:'',
+			keywords:'',
 			list: [
 				{ id: 1, name: '张三', ctime: new Date() },
 				{ id: 2, name: '张四', ctime: new Date() },
 				{ id: 3, name: '张五', ctime: new Date() },
+				{ id: 4, name: '张六麻子', ctime: new Date() },
 			]
 		},
 		methods: {
